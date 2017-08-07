@@ -45,7 +45,7 @@ public class ConsoleController {
 
     public static final String SET_ROLE = "/authority/set";  //post
     public static final String UNSET_ROLE = "/authority/unset";  //post
-    public static final String UNSET_ROL = "/authority/unset";  //post
+    public static final String UNSET_ROL = "/authority/uuuunset";  //post
 
 
 
