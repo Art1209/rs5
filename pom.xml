@@ -14,6 +14,7 @@
         <javax.servlet>4.0.0-b07</javax.servlet>
         <jstl.version>1.2</jstl.version>
         <spring.securiry>3.2.0.RELEASE</spring.securiry>
+        <jbosshome>C:\Program Files\Java\wildfly-10.1.0.Final</jbosshome>
     </properties>
 
     <dependencies>
@@ -105,6 +106,17 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.8.8</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mock-server</groupId>
+            <artifactId>mockserver-netty</artifactId>
+            <version>3.10.8</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>rs5</finalName>
@@ -124,6 +136,55 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>1.2.0.Alpha6</version>
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>install</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>redeploy</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+                <!--<configuration>-->
+                    <!--<force>true</force>-->
+                    <!--<hostname>localhost</hostname>-->
+                    <!--<port>8883</port>-->
+                    <!--<username>admin</username>-->
+                    <!--<password>password</password>-->
+                    <!--<filename>rs5.war</filename>-->
+                    <!--<jbossHome>${jbosshome}</jbossHome>-->
+                <!--</configuration>-->
+            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-surefire-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--<skipTests>false</skipTests>-->
+                    <!--<excludes>-->
+                        <!--<exclude>**/*IntegrationTest.java</exclude>-->
+                    <!--</excludes>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>integration-test</id>-->
+                        <!--<goals>-->
+                            <!--<goal>test</goal>-->
+                        <!--</goals>-->
+                        <!--<phase>integration-test</phase>-->
+                        <!--<configuration>-->
+                            <!--<excludes>-->
+                                <!--<exclude>none</exclude>-->
+                            <!--</excludes>-->
+                            <!--<includes>-->
+                                <!--<include>**/*IntegrationTest.java</include>-->
+                            <!--</includes>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
         </plugins>
     </build>
 </project>

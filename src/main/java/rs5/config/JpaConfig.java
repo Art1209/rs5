@@ -19,6 +19,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
+@EnableJpaRepositories(basePackages = {"rs5.persistence.repository"})
 public class JpaConfig {
 
     @Bean(name = "entityManagerFactory")

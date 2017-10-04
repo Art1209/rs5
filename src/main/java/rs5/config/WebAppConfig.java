@@ -46,6 +46,4 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 //    public UserService userService(){
 //        return new UserServiceImpl();
 //    }
-
-
 }
